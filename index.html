@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,249,252,
 /* HERO */
 #hero{max-width:1080px;margin:0 auto;padding:calc(58px + 6rem) 2.5rem 6rem;display:grid;grid-template-columns:1fr 300px;gap:5rem;align-items:start}
 .hero-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
-.hero-kicker::before{content:'';width:28px;height:1px;background:var(--blue);display:inline-block}
+.hero-kicker::before{content:'';display:none}
 .hero-name{font-family:'Playfair Display',serif;font-size:clamp(48px,6.5vw,82px);line-height:1.05;color:var(--navy);margin-bottom:1.25rem;letter-spacing:-.01em;font-weight:700}
 .hero-name em{font-style:italic;color:var(--blue);font-weight:400}
 .hero-role{font-size:12px;font-weight:400;color:var(--text-muted);margin-bottom:2rem;letter-spacing:.12em;text-transform:uppercase}
@@ -126,8 +126,8 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
 </style>
 </head>
 <body>
@@ -149,13 +149,12 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
 <!-- HERO -->
 <section id="hero">
   <div>
-    <div class="hero-kicker">Amsterdam, NL</div>
-    <h1 class="hero-name">Christina<br><em>Benopoulou</em></h1>
-    <p class="hero-role">Project Manager &nbsp;·&nbsp; MSc Information Sciences</p>
+    <div class="hero-kicker">Amsterdam, NL</div>    <h1 class="hero-name">Christina<br><em>Benopoulou</em></h1>
+    <p class="hero-role">Project Manager Intern &nbsp;·&nbsp; MSc Information Sciences</p>
     <p class="hero-bio">Information Sciences MSc student with a <strong>Computer Science background</strong> and hands-on experience across <strong>project management, data engineering, and software development</strong>. Turns complex problems into clean solutions and builds tools that make teams faster.</p>
     <div class="hero-btns">
       <a href="mailto:bennyschristina@gmail.com" class="btn btn-primary">Get in touch</a>
-      <a href="https://linkedin.com/in/YOUR-HANDLE" class="btn btn-outline" target="_blank">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/christina-benopoulou" class="btn btn-outline" target="_blank">LinkedIn ↗</a>
     </div>
   </div>
 
@@ -364,7 +363,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
     <div class="c-row"><span class="c-label">Email</span><span class="c-val"><a href="mailto:bennyschristina@gmail.com">bennyschristina@gmail.com</a></span></div>
     <div class="c-row"><span class="c-label">Phone</span><span class="c-val">+31 6 8349 7446</span></div>
     <div class="c-row"><span class="c-label">Location</span><span class="c-val">Amsterdam, NL</span></div>
-    <div class="c-row"><span class="c-label">LinkedIn</span><span class="c-val"><a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank">View profile ↗</a></span></div>
+    <div class="c-row"><span class="c-label">LinkedIn</span><span class="c-val"><a href="https://www.linkedin.com/in/christina-benopoulou" target="_blank">linkedin.com/in/christina-benopoulou ↗</a></span></div>
   </div>
 </section>
 
@@ -374,15 +373,26 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('in')})},{threshold:.08})
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
-const secs=document.querySelectorAll('section[id]')
-const links=document.querySelectorAll('.nav-links a')
-window.addEventListener('scroll',()=>{
-  let cur=''
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id})
-  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))
-},{passive:true})
+document.addEventListener('DOMContentLoaded',function(){
+  const els=document.querySelectorAll('.reveal')
+  if('IntersectionObserver' in window){
+    const obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+      })
+    },{threshold:.08,rootMargin:'0px 0px -40px 0px'})
+    els.forEach(function(el){obs.observe(el)})
+  } else {
+    els.forEach(function(el){el.classList.add('in')})
+  }
+  const secs=document.querySelectorAll('section[id]')
+  const links=document.querySelectorAll('.nav-links a')
+  window.addEventListener('scroll',function(){
+    let cur=''
+    secs.forEach(function(s){if(window.scrollY>=s.offsetTop-100)cur=s.id})
+    links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)})
+  },{passive:true})
+})
 </script>
 </body>
 </html>
