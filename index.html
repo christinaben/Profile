@@ -1,0 +1,333 @@
+Here's the full code — save it as `index.html` in your GitHub repo:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Christina Benopoulou — CV</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f4;
+  --text: #1a1a18;
+  --text-secondary: #5f5e5a;
+  --text-tertiary: #888780;
+  --border: rgba(0,0,0,0.12);
+  --border-hover: rgba(0,0,0,0.25);
+  --accent-bg: #e6f1fb;
+  --accent-text: #185fa5;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1a;
+    --bg-secondary: #252523;
+    --text: #f0ede8;
+    --text-secondary: #b4b2a9;
+    --text-tertiary: #888780;
+    --border: rgba(255,255,255,0.12);
+    --border-hover: rgba(255,255,255,0.25);
+    --accent-bg: #0c447c;
+    --accent-text: #b5d4f4;
+  }
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.cv-wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+.hero { padding: 2.5rem 0 2rem; border-bottom: 0.5px solid var(--border); margin-bottom: 2rem; }
+.hero-name { font-size: 32px; font-weight: 500; color: var(--text); letter-spacing: -0.5px; }
+.hero-title { font-size: 15px; color: var(--text-secondary); margin-top: 4px; }
+.hero-contacts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+.contact-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border: 0.5px solid var(--border); border-radius: 999px; padding: 4px 12px; text-decoration: none; }
+.contact-pill:hover { color: var(--text); border-color: var(--border-hover); }
+
+.nav { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 2rem; }
+.nav-btn { font-size: 13px; color: var(--text-secondary); background: transparent; border: 0.5px solid var(--border); border-radius: 999px; padding: 5px 14px; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+.nav-btn:hover { background: var(--bg-secondary); color: var(--text); }
+.nav-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+.section { display: none; }
+.section.visible { display: block; }
+.section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1.25rem; }
+
+.profile-text { font-size: 15px; line-height: 1.75; color: var(--text-secondary); max-width: 620px; }
+
+.entry { display: grid; grid-template-columns: 160px 1fr; gap: 0 1.5rem; padding: 1.25rem 0; border-bottom: 0.5px solid var(--border); }
+.entry:last-child { border-bottom: none; }
+.entry-period { font-size: 12px; color: var(--text-tertiary); }
+.entry-org { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.entry-role { font-size: 15px; font-weight: 500; color: var(--text); }
+.entry-type { display: inline-block; font-size: 11px; color: var(--accent-text); background: var(--accent-bg); border-radius: 999px; padding: 2px 8px; margin-top: 4px; }
+.entry-bullets { list-style: none; margin-top: 8px; }
+.entry-bullets li { font-size: 14px; color: var(--text-secondary); line-height: 1.6; padding: 2px 0 2px 14px; position: relative; }
+.entry-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--text-tertiary); font-size: 16px; line-height: 1.4; }
+
+.tags-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tag { font-size: 12px; color: var(--text-secondary); background: var(--bg-secondary); border: 0.5px solid var(--border); border-radius: 4px; padding: 3px 8px; }
+
+.skills-group { margin-bottom: 1.5rem; }
+.skills-group-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+
+.edu-degree { font-size: 15px; font-weight: 500; color: var(--text); }
+.edu-detail { font-size: 13px; color: var(--text-tertiary); margin-top: 4px; }
+
+.vol-entry { padding: 0.75rem 0; border-bottom: 0.5px solid var(--border); }
+.vol-entry:last-child { border-bottom: none; }
+.vol-role { font-size: 14px; font-weight: 500; color: var(--text); }
+.vol-org { font-size: 13px; color: var(--text-secondary); }
+.vol-period { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
+.vol-note { font-size: 13px; color: var(--text-secondary); margin-top: 4px; line-height: 1.55; }
+
+@media (max-width: 560px) {
+  .entry { grid-template-columns: 1fr; }
+  .entry-meta { margin-bottom: 4px; }
+  .hero-name { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<div class="cv-wrap">
+  <div class="hero">
+    <div class="hero-name">Christina Benopoulou</div>
+    <div class="hero-title">MSc Information Sciences · Project Manager Intern · Amsterdam</div>
+    <div class="hero-contacts">
+      <a class="contact-pill" href="mailto:bennyschristina@gmail.com"><i class="ti ti-mail"></i>bennyschristina@gmail.com</a>
+      <span class="contact-pill"><i class="ti ti-phone"></i>+31 6 8349 7446</span>
+      <a class="contact-pill" href="https://linkedin.com" target="_blank"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+      <span class="contact-pill"><i class="ti ti-map-pin"></i>Amsterdam, NL</span>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button class="nav-btn active" onclick="show('profile',this)">Profile</button>
+    <button class="nav-btn" onclick="show('experience',this)">Experience</button>
+    <button class="nav-btn" onclick="show('skills',this)">Skills</button>
+    <button class="nav-btn" onclick="show('education',this)">Education</button>
+    <button class="nav-btn" onclick="show('volunteering',this)">Volunteering</button>
+  </div>
+
+  <div id="profile" class="section visible">
+    <div class="section-label">About</div>
+    <p class="profile-text">MSc Information Sciences student at Vrije Universiteit Amsterdam with a background in Computer Science and Data Science. Currently interning as a Project Manager at Storyteq, where I coordinate cross-functional workflows, manage client deliverables, and work closely with data and creative operations teams. I enjoy translating complex technical work into clear outcomes and thrive at the intersection of product, data, and stakeholder communication.</p>
+    <div class="tags-wrap" style="margin-top:1rem">
+      <span class="tag">Product ownership</span>
+      <span class="tag">Scrum</span>
+      <span class="tag">Stakeholder communication</span>
+      <span class="tag">Data analysis</span>
+      <span class="tag">ETL pipelines</span>
+      <span class="tag">Cross-functional collaboration</span>
+    </div>
+  </div>
+
+  <div id="experience" class="section">
+    <div class="section-label">Work history</div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Feb 2026 – Present</div>
+        <div class="entry-org">Storyteq · Amsterdam</div>
+        <span class="entry-type">Internship</span>
+      </div>
+      <div>
+        <div class="entry-role">Project Manager</div>
+        <ul class="entry-bullets">
+          <li>Coordinated asset delivery and QC across a major client's peak production period, maintaining output quality and schedule under high volume.</li>
+          <li>Tracked project progress and team tasks using Monday.com, ensuring visibility across stakeholders.</li>
+          <li>Participated in Scrum ceremonies to align cross-functional teams on priorities and blockers.</li>
+          <li>Identified workflow inefficiencies and automated repetitive processes, reducing manual effort for the team.</li>
+          <li>Documented processes and maintained team knowledge bases in Confluence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Sep 2025 – Dec 2025</div>
+        <div class="entry-org">Robeco · Rotterdam</div>
+        <span class="entry-type">Working Student</span>
+      </div>
+      <div>
+        <div class="entry-role">Data Science</div>
+        <ul class="entry-bullets">
+          <li>Worked with Python, Azure Databricks, and Snowflake on data tasks in a sustainability finance context.</li>
+        </ul>
+        <div class="tags-wrap" style="margin-top:8px">
+          <span class="tag">Python</span><span class="tag">Azure Databricks</span><span class="tag">Snowflake</span><span class="tag">SQL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Feb 2025 – Jul 2025</div>
+        <div class="entry-org">NLC Health Ventures · Amsterdam</div>
+        <span class="entry-type">Internship</span>
+      </div>
+      <div>
+        <div class="entry-role">Software Developer</div>
+        <ul class="entry-bullets">
+          <li>Collaborated in weekly Scrum meetings with analysts and stakeholders to showcase features and iterated on feedback.</li>
+          <li>Built a Python-based ETL pipeline for real-time data synchronisation, scalability, and reliability.</li>
+          <li>Developed interactive Power BI dashboards to visualise key performance metrics.</li>
+          <li>Evaluated vector databases to support development of an internal AI chatbot with semantic search.</li>
+        </ul>
+        <div class="tags-wrap" style="margin-top:8px">
+          <span class="tag">Python</span><span class="tag">ETL</span><span class="tag">Power BI</span><span class="tag">Scrum</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Sep 2024 – Dec 2024</div>
+        <div class="entry-org">Capisoft B.V. · Amsterdam</div>
+        <span class="entry-type">Internship</span>
+      </div>
+      <div>
+        <div class="entry-role">Software Developer</div>
+        <ul class="entry-bullets">
+          <li>Built a full-stack CRM application using React, Next.js, Chakra UI, Django, and Firebase.</li>
+          <li>Developed a responsive front-end architecture ensuring optimal experience across devices.</li>
+        </ul>
+        <div class="tags-wrap" style="margin-top:8px">
+          <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Chakra UI</span><span class="tag">Django</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Sep 2024 – Dec 2024</div>
+        <div class="entry-org">Apple · Amsterdam</div>
+      </div>
+      <div>
+        <div class="entry-role">Technical Specialist</div>
+        <ul class="entry-bullets">
+          <li>Resolved 50+ support tickets per week and increased user satisfaction by 25%.</li>
+          <li>Troubleshot technical problems to minimise downtime and offered tailored solutions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Mar 2024 – Sep 2024</div>
+        <div class="entry-org">Apple · Amsterdam</div>
+      </div>
+      <div>
+        <div class="entry-role">Specialist</div>
+        <ul class="entry-bullets">
+          <li>Increased sales by 20% through effective customer engagement and product recommendations.</li>
+          <li>Generated new business leads through consultative selling.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Sep 2023 – Dec 2023</div>
+        <div class="entry-org">University of Twente</div>
+      </div>
+      <div>
+        <div class="entry-role">Teaching Assistant · Creative Technology</div>
+        <ul class="entry-bullets">
+          <li>Supported students with the Processing programming language during lab sessions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="skills" class="section">
+    <div class="section-label">Skills</div>
+    <div class="skills-group">
+      <div class="skills-group-name">Product &amp; ways of working</div>
+      <div class="tags-wrap">
+        <span class="tag">Scrum</span><span class="tag">Monday.com</span><span class="tag">Confluence</span><span class="tag">Azure DevOps</span><span class="tag">Stakeholder communication</span><span class="tag">Cross-functional collaboration</span><span class="tag">Process documentation</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-name">Data &amp; analytics</div>
+      <div class="tags-wrap">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Azure Databricks</span><span class="tag">Snowflake</span><span class="tag">Power BI</span><span class="tag">ETL / data engineering</span><span class="tag">MariaDB</span><span class="tag">MATLAB</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-name">Development</div>
+      <div class="tags-wrap">
+        <span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Django</span><span class="tag">HTML / CSS</span><span class="tag">C / C++</span><span class="tag">Java</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Postman</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-name">Languages</div>
+      <div class="tags-wrap">
+        <span class="tag">English (IELTS)</span><span class="tag">German (C1 – OSD)</span><span class="tag">Greek (native)</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="education" class="section">
+    <div class="section-label">Education</div>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Sep 2025 – 2026</div>
+        <div class="entry-org">Vrije Universiteit Amsterdam</div>
+      </div>
+      <div>
+        <div class="edu-degree">MSc Information Sciences</div>
+        <div class="edu-detail">Graduating 2026</div>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-period">Sep 2022 – Aug 2025</div>
+        <div class="entry-org">Vrije Universiteit Amsterdam</div>
+      </div>
+      <div>
+        <div class="edu-degree">BSc Computer Science</div>
+        <div class="edu-detail">Minor in Data Science and Business Analytics</div>
+        <div class="edu-detail" style="margin-top:6px">Thesis: <em>Implementation of a Dynamic Python-Based ETL Pipeline for Enhancing Data Processing and Storage</em> — graded 8/10</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="volunteering" class="section">
+    <div class="section-label">Voluntary work</div>
+    <div class="vol-entry">
+      <div class="vol-role">Environmental &amp; Community Volunteer</div>
+      <div class="vol-org">Green Office, Vrije Universiteit Amsterdam</div>
+      <div class="vol-period">Sep 2023 – May 2025</div>
+      <div class="vol-note">Contributed to VU's sustainability initiatives as the university maintained its position as the most sustainable in the Netherlands.</div>
+    </div>
+    <div class="vol-entry">
+      <div class="vol-role">Environmental Volunteer</div>
+      <div class="vol-org">Let's Do It Greece · Athens</div>
+      <div class="vol-period">May 2020 – Oct 2021</div>
+      <div class="vol-note">Five-month programme focused on ecological conservation and urban restoration across Greek cities.</div>
+    </div>
+    <div class="vol-entry">
+      <div class="vol-role">Healthcare Volunteer</div>
+      <div class="vol-org">Resteion Nursing Home · Athens</div>
+      <div class="vol-period">Mar 2019 – May 2019</div>
+      <div class="vol-note">Weekend visits to a nursing home as part of a high school volunteer programme over three months.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('visible');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
+```
+
+Copy all of that, paste into a new file called `index.html` in your repo, and you're done. Remember to update the LinkedIn href with your actual profile URL before pushing!
