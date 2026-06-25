@@ -24,19 +24,14 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;overflow-x:hidden;max-width:100vw}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,249,252,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:58px}
-.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);letter-spacing:.01em}
-.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
 .nav-links a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--blue)}
-
-/* HERO */
 #hero{max-width:1080px;margin:0 auto;padding:calc(58px + 6rem) 2.5rem 6rem;display:grid;grid-template-columns:1fr 300px;gap:5rem;align-items:start}
 .hero-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
-.hero-kicker::before{content:'';display:none}
 .hero-name{font-family:'Playfair Display',serif;font-size:clamp(48px,6.5vw,82px);line-height:1.05;color:var(--navy);margin-bottom:1.25rem;letter-spacing:-.01em;font-weight:700}
 .hero-name em{font-style:italic;color:var(--blue);font-weight:400}
 .hero-role{font-size:12px;font-weight:400;color:var(--text-muted);margin-bottom:2rem;letter-spacing:.12em;text-transform:uppercase}
@@ -48,8 +43,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,249,252,
 .btn-primary:hover{background:var(--navy-soft)}
 .btn-outline{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1px var(--border)}
 .btn-outline:hover{background:var(--stone)}
-
-/* HERO SIDEBAR */
 .hero-side{padding-top:.25rem}
 .hero-quick{background:var(--white);border:1px solid var(--border)}
 .quick-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.25rem;border-bottom:1px solid var(--border)}
@@ -58,20 +51,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,249,252,
 .quick-val{font-size:12.5px;color:var(--navy);font-weight:500;text-align:right}
 .quick-val a{color:var(--blue);text-decoration:none}
 .quick-val a:hover{text-decoration:underline}
-
-/* DIVIDER */
 .full-divider{border:none;border-top:1px solid var(--border);max-width:1080px;margin:0 auto}
-
-/* SECTIONS */
 section:not(#hero){max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem}
-
-/* SEC HEADER */
 .sec-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3.5rem}
 .sec-num{font-family:'Playfair Display',serif;font-size:13px;color:var(--blue);font-style:italic}
 .sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);color:var(--navy);line-height:1.05;letter-spacing:-.01em}
 .sec-line{flex:1;height:1px;background:var(--border);margin-bottom:4px}
-
-/* EXPERIENCE */
 .exp-item{display:grid;grid-template-columns:155px 1fr;gap:2.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
 .exp-item:last-child{border-bottom:none}
 .exp-date{font-size:11px;letter-spacing:.05em;color:var(--text-muted);line-height:1.6;padding-top:3px}
@@ -82,31 +67,31 @@ section:not(#hero){max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem}
 .exp-bullets li{font-size:13.5px;color:var(--text-mid);padding:.22rem 0 .22rem 1.1rem;position:relative;line-height:1.75;font-weight:300}
 .exp-bullets li::before{content:'–';position:absolute;left:0;color:var(--blue)}
 .exp-bullets li strong{color:var(--navy);font-weight:500}
-
-/* SKILLS */
 .skills-outer{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
 .skill-card{border:1px solid var(--border);padding:1.75rem;background:var(--white)}
 .skill-card-title{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:1.25rem}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem}
 .tag{font-size:11.5px;padding:.28rem .72rem;background:var(--stone);color:var(--text-mid);font-weight:400;border:1px solid var(--border)}
-
-/* EDUCATION */
 .edu-item{display:grid;grid-template-columns:155px 1fr;gap:2.5rem;padding:2rem 0;border-bottom:1px solid var(--border)}
 .edu-item:last-child{border-bottom:none}
 .edu-years{font-size:11px;color:var(--text-muted);letter-spacing:.05em;padding-top:3px}
 .edu-degree{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:.2rem}
 .edu-school{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:.65rem}
 .edu-detail{font-size:13px;color:var(--text-muted);line-height:1.85;font-weight:300}
-
-/* VOLUNTEERING */
 .vol-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem}
 .vol-card{border:1px solid var(--border);padding:1.75rem;background:var(--white)}
 .vol-role{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:.2rem}
 .vol-org{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-bottom:.75rem}
 .vol-desc{font-size:13px;color:var(--text-muted);line-height:1.75;font-weight:300}
 .vol-date{font-size:10px;color:var(--text-muted);margin-top:.85rem;letter-spacing:.06em;border-top:1px solid var(--border);padding-top:.6rem;text-transform:uppercase}
-
-/* CONTACT */
+.rec-card{background:var(--white);border:1px solid var(--border);padding:2.5rem;position:relative}
+.rec-quote{font-family:'Playfair Display',serif;font-size:72px;color:var(--blue-pale);line-height:.8;position:absolute;top:1.5rem;right:2rem;pointer-events:none;user-select:none}
+.rec-author{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+.rec-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;flex-shrink:0}
+.rec-name{font-size:14px;font-weight:500;color:var(--navy)}
+.rec-role{font-size:11px;letter-spacing:.06em;color:var(--blue);text-transform:uppercase;margin-top:.15rem}
+.rec-date{font-size:11px;color:var(--text-muted);margin-top:.15rem}
+.rec-text{font-size:14.5px;color:var(--text-mid);line-height:1.9;font-weight:300;font-style:italic;border-top:1px solid var(--border);padding-top:1.5rem}
 #contact{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .contact-left h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,50px);color:var(--navy);line-height:1.1;margin-bottom:1rem}
 .contact-left h2 em{font-style:italic;color:var(--blue)}
@@ -118,25 +103,12 @@ section:not(#hero){max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem}
 .c-val{font-size:13px;color:var(--navy);font-weight:500}
 .c-val a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border);transition:all .2s}
 .c-val a:hover{color:var(--blue);border-color:var(--blue)}
-
-/* FOOTER */
 footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 .footer-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--text-muted);font-style:italic}
 .footer-r{font-size:10.5px;color:var(--text-muted);letter-spacing:.06em}
-
-/* RECOMMENDATIONS */
-.rec-list{display:flex;flex-direction:column;gap:2rem}
-.rec-card{background:var(--white);border:1px solid var(--border);padding:2.5rem;position:relative;opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
-.rec-card.in{opacity:1;transform:none}
-.rec-quote{font-family:'Playfair Display',serif;font-size:72px;color:var(--blue-pale);line-height:.8;position:absolute;top:1.5rem;left:2rem;pointer-events:none;user-select:none}
-.rec-text{font-size:14.5px;color:var(--text-mid);line-height:1.9;font-weight:300;font-style:italic;margin-bottom:2rem;padding-top:1.5rem;position:relative;z-index:1}
-.rec-author{display:flex;align-items:center;gap:1rem;border-top:1px solid var(--border);padding-top:1.25rem}
-.rec-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:400;flex-shrink:0}
-.rec-name{font-size:14px;font-weight:500;color:var(--navy)}
-.rec-role{font-size:11px;letter-spacing:.06em;color:var(--blue);text-transform:uppercase;margin-top:.15rem}
-.rec-date{font-size:11px;color:var(--text-muted);margin-top:.15rem}
-
-/* RESPONSIVE */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
 @media(max-width:768px){
   #hero{grid-template-columns:1fr;gap:2.5rem;padding:calc(58px + 3rem) 1.5rem 3rem}
   .hero-side{width:100%}
@@ -157,10 +129,6 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
   #hero{padding:calc(58px + 2rem) 1.25rem 2.5rem}
   section:not(#hero){padding:3rem 1.25rem}
 }
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
 </style>
 </head>
 <body>
@@ -180,18 +148,17 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div>
-    <div class="hero-kicker">Amsterdam, NL</div>    <h1 class="hero-name">Christina<br><em>Benopoulou</em></h1>
-    <p class="hero-role">Project Manager Intern &nbsp;·&nbsp; MSc Information Sciences</p>
+    <div class="hero-kicker">Amsterdam, NL</div>
+    <h1 class="hero-name">Christina<br><em>Benopoulou</em></h1>
+    <p class="hero-role">Project Manager Intern · MSc Information Sciences · BSc Computer Science</p>
     <p class="hero-bio">Information Sciences MSc student with a <strong>Computer Science background</strong> and hands-on experience across <strong>project management, data engineering, and software development</strong>. Turns complex problems into clean solutions and builds tools that make teams faster.</p>
     <div class="hero-btns">
       <a href="mailto:bennyschristina@gmail.com" class="btn btn-primary">Get in touch</a>
       <a href="https://www.linkedin.com/in/christina-benopoulou" class="btn btn-outline" target="_blank">LinkedIn ↗</a>
     </div>
   </div>
-
   <div class="hero-side reveal">
     <div class="hero-quick">
       <div class="quick-row"><span class="quick-label">Location</span><span class="quick-val">Amsterdam, NL</span></div>
@@ -203,213 +170,126 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2.5rem;max-width:1080p
 
 <hr class="full-divider"/>
 
-<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="sec-header">
-    <span class="sec-num">01</span>
-    <h2 class="sec-title">Experience</h2>
-    <div class="sec-line"></div>
-  </div>
+  <div class="sec-header"><span class="sec-num">01</span><h2 class="sec-title">Experience</h2><div class="sec-line"></div></div>
 
   <div class="exp-item reveal">
     <div><div class="exp-date">Feb 2026 – Present</div><div class="exp-badge">Internship</div></div>
-    <div>
-      <div class="exp-role">Project Manager</div>
-      <div class="exp-company">Internship · Storyteq · Amsterdam</div>
-      <ul class="exp-bullets">
-        <li>Owned client communication and asset delivery for <strong>Calvin Klein (PVH), Sony, and Cummins</strong>.</li>
-        <li>Led end-to-end project execution, shipping <strong>16 templates across 244 chargeable hours</strong>.</li>
-        <li>Built an Excel QA automation script that cut asset creation time by <strong>10%</strong>.</li>
-        <li>Automated asset uploads to Aprimo via a batch ingestion script, saving <strong>4–5 hours per project</strong>.</li>
-        <li>Built a weekly team performance dashboard adopted across the Platform Services team.</li>
-      </ul>
-    </div>
+    <div><div class="exp-role">Project Manager</div><div class="exp-company">Storyteq · Amsterdam</div>
+    <ul class="exp-bullets">
+      <li>Owned client communication and asset delivery for <strong>Calvin Klein (PVH), Sony, and Cummins</strong>.</li>
+      <li>Led end-to-end project execution, shipping <strong>16 templates across 244 chargeable hours</strong>.</li>
+      <li>Built an Excel QA automation script that cut asset creation time by <strong>10%</strong>.</li>
+      <li>Automated asset uploads to Aprimo via a batch ingestion script, saving <strong>4–5 hours per project</strong>.</li>
+      <li>Built a weekly team performance dashboard adopted across the Platform Services team.</li>
+    </ul></div>
   </div>
 
   <div class="exp-item reveal d1">
     <div><div class="exp-date">Sep – Dec 2025</div><div class="exp-badge">Working Student</div></div>
-    <div>
-      <div class="exp-role">Data Science</div>
-      <div class="exp-company">Working Student · Robeco · Rotterdam</div>
-      <ul class="exp-bullets">
-        <li>Wrote Python scripts in Databricks to transform and analyse data stored in Snowflake.</li>
-        <li>Supported the finance team on data work tied to sustainability and emissions-reduction goals.</li>
-      </ul>
-    </div>
+    <div><div class="exp-role">Data Science</div><div class="exp-company">Robeco · Rotterdam</div>
+    <ul class="exp-bullets">
+      <li>Wrote Python scripts in Databricks to transform and analyse data stored in Snowflake.</li>
+      <li>Supported the finance team on data work tied to sustainability and emissions-reduction goals.</li>
+    </ul></div>
   </div>
 
   <div class="exp-item reveal">
     <div><div class="exp-date">Feb – Jul 2025</div><div class="exp-badge">Internship</div></div>
-    <div>
-      <div class="exp-role">Software Developer</div>
-      <div class="exp-company">Internship · NLC Health Ventures · Amsterdam</div>
-      <ul class="exp-bullets">
-        <li>Gathered stakeholder feedback in weekly Scrum ceremonies and iterated on features based on input.</li>
-        <li>Built a Python-based ETL pipeline for data processing with real-time synchronization.</li>
-        <li>Ran data analysis and built <strong>interactive Power BI dashboards</strong> to surface key metrics.</li>
-      </ul>
-    </div>
+    <div><div class="exp-role">Software Developer</div><div class="exp-company">NLC Health Ventures · Amsterdam</div>
+    <ul class="exp-bullets">
+      <li>Gathered stakeholder feedback in weekly Scrum ceremonies and iterated on features based on input.</li>
+      <li>Built a Python-based ETL pipeline for data processing with real-time synchronization.</li>
+      <li>Ran data analysis and built <strong>interactive Power BI dashboards</strong> to surface key metrics.</li>
+    </ul></div>
   </div>
 
   <div class="exp-item reveal d1">
     <div><div class="exp-date">Sep – Dec 2024</div><div class="exp-badge">Internship</div></div>
-    <div>
-      <div class="exp-role">Frontend Developer</div>
-      <div class="exp-company">Internship · Capisoft B.V · Amsterdam</div>
-      <ul class="exp-bullets">
-        <li>Built a responsive front-end with Chakra UI integrated with a Django backend for a consistent cross-device experience.</li>
-      </ul>
-    </div>
+    <div><div class="exp-role">Frontend Developer</div><div class="exp-company">Capisoft B.V · Amsterdam</div>
+    <ul class="exp-bullets">
+      <li>Built a responsive front-end with Chakra UI integrated with a Django backend for a consistent cross-device experience.</li>
+    </ul></div>
   </div>
 
   <div class="exp-item reveal">
     <div><div class="exp-date">Mar – Dec 2024</div></div>
-    <div>
-      <div class="exp-role">Technical Specialist & Specialist</div>
-      <div class="exp-company">Apple · Amsterdam</div>
-      <ul class="exp-bullets">
-        <li>Resolved <strong>50+ support tickets per week</strong>, increasing user satisfaction by <strong>25%</strong>.</li>
-        <li>Grew sales by <strong>20%</strong> through customer engagement, product recommendations, and lead generation.</li>
-      </ul>
-    </div>
+    <div><div class="exp-role">Technical Specialist & Specialist</div><div class="exp-company">Apple · Amsterdam</div>
+    <ul class="exp-bullets">
+      <li>Resolved <strong>50+ support tickets per week</strong>, increasing user satisfaction by <strong>25%</strong>.</li>
+      <li>Grew sales by <strong>20%</strong> through customer engagement, product recommendations, and lead generation.</li>
+    </ul></div>
   </div>
 
   <div class="exp-item reveal d1">
     <div><div class="exp-date">Sep 2022 – Dec 2023</div></div>
-    <div>
-      <div class="exp-role">Teaching Assistant & Student Ambassador</div>
-      <div class="exp-company">University of Twente & VU Amsterdam</div>
-      <ul class="exp-bullets">
-        <li>Supported students with programming coursework in Processing (Creative Technology).</li>
-        <li>Represented VU Amsterdam with presentations on computer science topics to prospective students.</li>
-      </ul>
-    </div>
+    <div><div class="exp-role">Teaching Assistant & Student Ambassador</div><div class="exp-company">University of Twente & VU Amsterdam</div>
+    <ul class="exp-bullets">
+      <li>Supported students with programming coursework in Processing (Creative Technology).</li>
+      <li>Represented VU Amsterdam with presentations on computer science topics to prospective students.</li>
+    </ul></div>
   </div>
 </section>
 
 <hr class="full-divider"/>
 
-<!-- SKILLS -->
 <section id="skills">
-  <div class="sec-header">
-    <span class="sec-num">02</span>
-    <h2 class="sec-title">Skills</h2>
-    <div class="sec-line"></div>
-  </div>
+  <div class="sec-header"><span class="sec-num">02</span><h2 class="sec-title">Skills</h2><div class="sec-line"></div></div>
   <div class="skills-outer reveal">
-    <div class="skill-card">
-      <div class="skill-card-title">Product & Ways of Working</div>
-      <div class="tags">
-        <span class="tag">Agile / Scrum</span><span class="tag">Stakeholder comms</span><span class="tag">Cross-functional collab</span><span class="tag">User feedback & iteration</span><span class="tag">Process automation</span><span class="tag">Project execution</span><span class="tag">Monday.com</span><span class="tag">Confluence</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-title">Data & Analytics</div>
-      <div class="tags">
-        <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Snowflake</span><span class="tag">Azure Databricks</span><span class="tag">ETL / data engineering</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-title">Development</div>
-      <div class="tags">
-        <span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Java</span><span class="tag">C/C++</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Postman</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-title">Languages</div>
-      <div class="tags">
-        <span class="tag">Greek — Fluent</span><span class="tag">English — IELTS</span><span class="tag">German — C1 (OSD)</span>
-      </div>
-    </div>
+    <div class="skill-card"><div class="skill-card-title">Product & Ways of Working</div><div class="tags"><span class="tag">Agile / Scrum</span><span class="tag">Stakeholder comms</span><span class="tag">Cross-functional collab</span><span class="tag">User feedback & iteration</span><span class="tag">Process automation</span><span class="tag">Project execution</span><span class="tag">Monday.com</span><span class="tag">Confluence</span></div></div>
+    <div class="skill-card"><div class="skill-card-title">Data & Analytics</div><div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Snowflake</span><span class="tag">Azure Databricks</span><span class="tag">ETL / data engineering</span></div></div>
+    <div class="skill-card"><div class="skill-card-title">Development</div><div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Java</span><span class="tag">C/C++</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Postman</span></div></div>
+    <div class="skill-card"><div class="skill-card-title">Languages</div><div class="tags"><span class="tag">Greek — Fluent</span><span class="tag">English — IELTS</span><span class="tag">German — C1 (OSD)</span></div></div>
   </div>
 </section>
 
 <hr class="full-divider"/>
 
-<!-- EDUCATION -->
 <section id="education">
-  <div class="sec-header">
-    <span class="sec-num">03</span>
-    <h2 class="sec-title">Education</h2>
-    <div class="sec-line"></div>
-  </div>
+  <div class="sec-header"><span class="sec-num">03</span><h2 class="sec-title">Education</h2><div class="sec-line"></div></div>
   <div class="reveal">
     <div class="edu-item">
       <div class="edu-years">2025 – 2026</div>
-      <div>
-        <div class="edu-degree">MSc Information Sciences</div>
-        <div class="edu-school">Vrije Universiteit Amsterdam</div>
-        <div class="edu-detail">Graduation: 2026 &nbsp;·&nbsp; Broader Mind Course, Certificate of Completion<br>Thesis: <em>Verification Trust in High-Volume Digital Content Production — a system architecture for scalable AI supervision</em></div>
-      </div>
+      <div><div class="edu-degree">MSc Information Sciences</div><div class="edu-school">Vrije Universiteit Amsterdam</div><div class="edu-detail">Graduation: 2026 · Broader Mind Course, Certificate of Completion<br>Thesis: <em>Verification Trust in High-Volume Digital Content Production — a system architecture for scalable AI supervision</em></div></div>
     </div>
     <div class="edu-item">
       <div class="edu-years">2022 – 2025</div>
-      <div>
-        <div class="edu-degree">BSc Computer Science</div>
-        <div class="edu-school">Vrije Universiteit Amsterdam</div>
-        <div class="edu-detail">Minor in Data Science and Business Analytics<br>Thesis: <em>Implementation of a Dynamic Python-Based ETL Pipeline for Enhancing Data Processing and Storage</em> — graded 8/10</div>
-      </div>
+      <div><div class="edu-degree">BSc Computer Science</div><div class="edu-school">Vrije Universiteit Amsterdam</div><div class="edu-detail">Minor in Data Science and Business Analytics<br>Thesis: <em>Implementation of a Dynamic Python-Based ETL Pipeline for Enhancing Data Processing and Storage</em> — graded 8/10</div></div>
     </div>
   </div>
 </section>
 
 <hr class="full-divider"/>
 
-<!-- VOLUNTEERING -->
 <section id="volunteering">
-  <div class="sec-header">
-    <span class="sec-num">04</span>
-    <h2 class="sec-title">Volunteering</h2>
-    <div class="sec-line"></div>
-  </div>
+  <div class="sec-header"><span class="sec-num">04</span><h2 class="sec-title">Volunteering</h2><div class="sec-line"></div></div>
   <div class="vol-list reveal">
-    <div class="vol-card">
-      <div class="vol-role">Environmental & Community Volunteer</div>
-      <div class="vol-org">Green Office · VU Amsterdam</div>
-      <div class="vol-desc">Supported initiatives helping VU maintain its position as the most sustainable university in the Netherlands.</div>
-      <div class="vol-date">Sep 2023 – May 2025</div>
-    </div>
-    <div class="vol-card">
-      <div class="vol-role">Environmental Volunteer</div>
-      <div class="vol-org">Let's Do It Greece · Athens</div>
-      <div class="vol-desc">Took part in a conservation and urban restoration programme across Athens.</div>
-      <div class="vol-date">May 2020 – Oct 2021</div>
-    </div>
-    <div class="vol-card">
-      <div class="vol-role">Healthcare Volunteer</div>
-      <div class="vol-org">Resteion Nursing Home · Athens</div>
-      <div class="vol-desc">Visited residents at a nursing home through a high school volunteer programme.</div>
-      <div class="vol-date">Mar – May 2019</div>
-    </div>
+    <div class="vol-card"><div class="vol-role">Environmental & Community Volunteer</div><div class="vol-org">Green Office · VU Amsterdam</div><div class="vol-desc">Supported initiatives helping VU maintain its position as the most sustainable university in the Netherlands.</div><div class="vol-date">Sep 2023 – May 2025</div></div>
+    <div class="vol-card"><div class="vol-role">Environmental Volunteer</div><div class="vol-org">Let's Do It Greece · Athens</div><div class="vol-desc">Took part in a conservation and urban restoration programme across Athens.</div><div class="vol-date">May 2020 – Oct 2021</div></div>
+    <div class="vol-card"><div class="vol-role">Healthcare Volunteer</div><div class="vol-org">Resteion Nursing Home · Athens</div><div class="vol-desc">Visited residents at a nursing home through a high school volunteer programme.</div><div class="vol-date">Mar – May 2019</div></div>
   </div>
 </section>
 
 <hr class="full-divider"/>
 
-<!-- RECOMMENDATIONS -->
 <section id="recommendations">
-  <div class="sec-header">
-    <span class="sec-num">05</span>
-    <h2 class="sec-title">Recommendations</h2>
-    <div class="sec-line"></div>
-  </div>
-  <div class="rec-list">
-    <div class="rec-card reveal">
-      <div class="rec-quote">"</div>
-      <blockquote class="rec-text">I've had the pleasure of seeing Christina grow during her internship, and her impact has been outstanding. She quickly added value by improving and automating processes across our PM team and supporting key accounts with a high level of ownership.<br><br>Christina brings a powerful combination of project management skills and hands-on expertise in automation, data, and AI-driven workflows. Her work has reduced operational workload, improved efficiency, and enabled senior team members to focus more on strategic priorities.<br><br>What stands out most is her proactive mindset and continuous drive to make ways of working smarter and more scalable. Christina is a high-potential professional who consistently delivers meaningful impact, and I highly recommend her.</blockquote>
-      <div class="rec-author">
-        <div class="rec-avatar">ES</div>
-        <div>
-          <div class="rec-name">Eline Steltenpool-Schuurs</div>
-          <div class="rec-role">Head of Platform Services · Storyteq</div>
-          <div class="rec-date">June 2026 · Managed Christina directly</div>
-        </div>
+  <div class="sec-header"><span class="sec-num">05</span><h2 class="sec-title">Recommendations</h2><div class="sec-line"></div></div>
+  <div class="rec-card reveal">
+    <div class="rec-quote">"</div>
+    <div class="rec-author">
+      <div class="rec-avatar">ES</div>
+      <div>
+        <div class="rec-name">Eline Steltenpool-Schuurs</div>
+        <div class="rec-role">Head of Platform Services · Storyteq</div>
+        <div class="rec-date">June 2026 · Managed Christina directly</div>
       </div>
     </div>
+    <blockquote class="rec-text">I've had the pleasure of seeing Christina grow during her internship, and her impact has been outstanding. She quickly added value by improving and automating processes across our PM team and supporting key accounts with a high level of ownership.<br><br>Christina brings a powerful combination of project management skills and hands-on expertise in automation, data, and AI-driven workflows. Her work has reduced operational workload, improved efficiency, and enabled senior team members to focus more on strategic priorities.<br><br>What stands out most is her proactive mindset and continuous drive to make ways of working smarter and more scalable. Christina is a high-potential professional who consistently delivers meaningful impact, and I highly recommend her.</blockquote>
   </div>
 </section>
 
 <hr class="full-divider"/>
+
 <section id="contact">
   <div class="contact-left reveal">
     <h2>Open to<br><em>new opportunities.</em></h2>
